@@ -61,7 +61,7 @@ endif
 ifneq (,$(findstring unix,$(platform)))
    TARGET := $(TARGET_NAME)_libretro.so
    fpic := -fPIC
-   SHARED := -shared -Wl,--no-undefined -Wl,--version-script=link.T
+   SHARED := -shared -Wl,--no-undefined -Wl,--version-script=link.T -lc
    ifneq (,$(findstring Haiku,$(shell uname -s)))
    CXXFLAGS += -fpermissive
    PTHREAD_FLAGS = -lpthread
